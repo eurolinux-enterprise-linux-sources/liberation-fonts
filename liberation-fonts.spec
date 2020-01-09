@@ -10,7 +10,7 @@ New.
 Name:             %{fontname}-fonts
 Summary:          Fonts to replace commonly used Microsoft Windows fonts
 Version:          1.05.1.20090721
-Release:          4%{?dist}
+Release:          5%{?dist}
 # The license of the Liberation Fonts is a EULA that contains GPLv2 and two
 # exceptions:
 # The first exception is the standard FSF font exception.
@@ -105,13 +105,16 @@ install -m 0644 -p ttf/*.ttf %{buildroot}%{_fontdir}
 install -m 0755 -d %{buildroot}%{catalogue}
 %__ln_s %{_fontdir} %{buildroot}%{catalogue}/%{name}
 # fonts.{dir,scale}
-mkfontdir %{buildroot}%{_fontdir}
 mkfontscale %{buildroot}%{_fontdir}
+mkfontdir %{buildroot}%{_fontdir}
 
 %clean
 %__rm -rf %{buildroot}
 
 %changelog
+* Tue Feb 14 2012 Pravin Satpute <psatpute@redhat.com> - 1.05.1.20090721-5
+- Resolves: rhbz#772165
+
 * Wed Jan 13 2010 Caius 'kaio' Chance <cchance@redhat.com> - 1.05.1.20090721-4
 - Resolves: rhbz#554913
 - Fixed macro typo.
