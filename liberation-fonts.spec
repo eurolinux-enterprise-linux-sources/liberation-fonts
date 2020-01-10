@@ -12,7 +12,7 @@ New.
 Name:             %{fontname}-fonts
 Summary:          Fonts to replace commonly used Microsoft Windows fonts
 Version:          1.07.2
-Release:          13%{?dist}
+Release:          14%{?dist}
 Epoch:          1
 # The license of the Liberation Fonts is a EULA that contains GPLv2 and two
 # exceptions:
@@ -151,6 +151,9 @@ mkfontscale %{buildroot}%{_fontdir}
 mkfontdir %{buildroot}%{_fontdir}
 
 %changelog
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 1:1.07.2-14
+- Mass rebuild 2013-12-27
+
 * Thu Feb 14 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1:1.07.2-13
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
 
