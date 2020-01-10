@@ -12,7 +12,7 @@ New.
 Name:             %{fontname}-fonts
 Summary:          Fonts to replace commonly used Microsoft Windows fonts
 Version:          1.07.2
-Release:          14%{?dist}
+Release:          15%{?dist}
 Epoch:          1
 # The license of the Liberation Fonts is a EULA that contains GPLv2 and two
 # exceptions:
@@ -151,6 +151,13 @@ mkfontscale %{buildroot}%{_fontdir}
 mkfontdir %{buildroot}%{_fontdir}
 
 %changelog
+* Mon Jul 27 2015 Scientific Linux Auto Patch Process <SCIENTIFIC-LINUX-DEVEL@LISTSERV.FNAL.GOV>
+- Eliminated rpmbuild "bogus date" error due to inconsistent weekday,
+  by assuming the date is correct and changing the weekday.
+
+* Tue Apr 21 2015 Pravin Satpute <psatpute@redhat.com> - 1:1.07.2-15
+- Resolves: rhbz#1193457 - Added ArialMT as a alias for Liberation Sans
+
 * Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 1:1.07.2-14
 - Mass rebuild 2013-12-27
 
