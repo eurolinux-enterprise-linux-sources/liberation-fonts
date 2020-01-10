@@ -12,7 +12,7 @@ New.
 Name:             %{fontname}-fonts
 Summary:          Fonts to replace commonly used Microsoft Windows fonts
 Version:          1.07.2
-Release:          16%{?dist}
+Release:          13%{?dist}
 Epoch:          1
 # The license of the Liberation Fonts is a EULA that contains GPLv2 and two
 # exceptions:
@@ -28,16 +28,10 @@ Source3:          %{name}-sans.conf
 Source4:          %{name}-serif.conf
 Source5:          %{name}-narrow.conf
 BuildArch:        noarch
-
 BuildRequires:    fontpackages-devel >= 1.13, xorg-x11-font-utils
 BuildRequires:    fontforge
 BuildRequires:    fonttools
 Patch1: %{name}-bug-715309-714191-835182.patch
-
-Requires:         %{fontname}-mono-fonts = %{epoch}:%{version}-%{release}
-Requires:         %{fontname}-narrow-fonts = %{epoch}:%{version}-%{release}
-Requires:         %{fontname}-sans-fonts = %{epoch}:%{version}-%{release}
-Requires:         %{fontname}-serif-fonts = %{epoch}:%{version}-%{release}
 
 %description
 %common_desc
@@ -156,18 +150,7 @@ done
 mkfontscale %{buildroot}%{_fontdir}
 mkfontdir %{buildroot}%{_fontdir}
 
-%files
-
 %changelog
-* Fri Sep 29 2017 Jens Petersen <petersen@redhat.com> - 1:1.07.2-16
-- make base package a metapkg requiring the subpackages (#1482760)
-
-* Tue Apr 21 2015 Pravin Satpute <psatpute@redhat.com> - 1:1.07.2-15
-- Resolves: rhbz#1193457 - Added ArialMT as a alias for Liberation Sans
-
-* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 1:1.07.2-14
-- Mass rebuild 2013-12-27
-
 * Thu Feb 14 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1:1.07.2-13
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
 
